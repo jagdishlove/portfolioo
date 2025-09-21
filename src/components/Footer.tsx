@@ -11,28 +11,28 @@ const Footer = () => {
               © {new Date().getFullYear()} Jagdish Mehra. All rights reserved.
             </p>
           </div>
-          
+
           <div className="flex space-x-6">
-            <a 
-              href="https://github.com/nicolelancaster" 
-              target="_blank" 
+            <a
+              href="https://github.com/jagdishlove"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               <Github size={20} />
               <span className="sr-only">GitHub</span>
             </a>
-            <a 
-              href="https://linkedin.com/in/nicolelancaster" 
-              target="_blank" 
+            <a
+              href="https://www.linkedin.com/in/jagdish-singh-mehra-75a616130/"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               <Linkedin size={20} />
               <span className="sr-only">LinkedIn</span>
             </a>
-            <a 
-              href="mailto:contact@nicolelancaster.tech" 
+            <a
+              href="mailto:jagdish.funn@gmail.com"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               <Mail size={20} />
