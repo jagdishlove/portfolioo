@@ -39,6 +39,32 @@ const ProjectsSection = () => {
       liveUrl: "#",
       githubUrl: "#",
     },
+    {
+      title: "GPT3 Animation Website",
+      description:
+        "A stunning website showcasing the capabilities of GPT-3 through interactive animations and examples.",
+      image: "/public/images/gpt3.png",
+      tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "OpenAI"],
+      liveUrl: "https://gpt3-jm.vercel.app/",
+      githubUrl: "https://github.com/jagdishlove/gpt3-jm",
+    },
+    {
+      title: "Batman Arkham shop E-commerce",
+      description:
+        "A stunning e-commerce website for the Batman: Arkham series, featuring a sleek design and user-friendly interface.",
+      image: "/public/images/batman.png",
+      tags: [
+        "React",
+        "nodejs",
+        "expressjs",
+        "TypeScript",
+        "zustand",
+        "Tailwind CSS",
+        "MongoDB",
+      ],
+      liveUrl: "https://batman-arkham-shop-client.vercel.app/",
+      githubUrl: "https://github.com/jagdishlove/Batman_Arkham_shop",
+    },
   ];
 
   return (
