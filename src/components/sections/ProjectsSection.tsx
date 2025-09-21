@@ -16,7 +16,7 @@ const ProjectsSection = () => {
       title: "Covid-19 Tracker",
       description:
         "A real-time web application that displays up-to-date global and country-specific Covid-19 statistics, including confirmed cases, recoveries, and deaths. The project fetches data from a public API and presents it in a clean, responsive interface with interactive charts and tables.",
-      image: "/public/images/covid-19-tracker.png",
+      image: "/images/covid-19-tracker.png",
       tags: ["React", "Node.js", "MongoDB"],
       liveUrl: "https://coive-19-tracker.web.app/",
       githubUrl: "https://github.com/jagdishlove/covid19-tracker",
@@ -25,7 +25,7 @@ const ProjectsSection = () => {
       title: "Short-y",
       description:
         "Short-y is a lightweight and efficient web application that allows users to shorten long URLs into compact, easy-to-share links. Designed for simplicity and speed, Short-y helps make links more manageable while tracking usage data.",
-      image: "/public/images/short-y.png",
+      image: "/images/short-y.png",
       tags: ["react", "Firebase", "Tailwind CSS"],
       liveUrl: "https://short-y-j4u3.vercel.app/",
       githubUrl: "https://github.com/jagdishlove/shortY",
@@ -43,7 +43,7 @@ const ProjectsSection = () => {
       title: "GPT3 Animation Website",
       description:
         "A stunning website showcasing the capabilities of GPT-3 through interactive animations and examples.",
-      image: "/public/images/gpt3.png",
+      image: "/images/gpt3.png",
       tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "OpenAI"],
       liveUrl: "https://gpt3-jm.vercel.app/",
       githubUrl: "https://github.com/jagdishlove/gpt3-jm",
@@ -52,7 +52,7 @@ const ProjectsSection = () => {
       title: "Batman Arkham shop E-commerce",
       description:
         "A stunning e-commerce website for the Batman: Arkham series, featuring a sleek design and user-friendly interface.",
-      image: "/public/images/batman.png",
+      image: "images/batman.png",
       tags: [
         "React",
         "nodejs",
