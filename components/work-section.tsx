@@ -6,6 +6,15 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
+    title: "FeedLoop",
+    description:
+      "Shaped an intuitive user experience by developing a lightweight, framework-agnostic feedback widget that can be integrated into any website via a single-line script tag.",
+    image: "thoughtstyle.png",
+    tags: ["React", "Node.js", "MongoDB"],
+    liveUrl: "https://thoughtsyde-qxn4.vercel.app/",
+    githubUrl: "https://github.com/jagdishlove/covid19-tracker",
+  },
+  {
     title: "Covid-19 Tracker",
     description:
       "A real-time web application that displays up-to-date global and country-specific Covid-19 statistics, including confirmed cases, recoveries, and deaths. The project fetches data from a public API and presents it in a clean, responsive interface with interactive charts and tables.",
