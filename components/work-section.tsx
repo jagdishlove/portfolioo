@@ -6,6 +6,15 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
+    title: "Real-Time Infrastructure Monitor",
+    description:
+      "A comprehensive platform for monitoring infrastructure in real time. Stay tuned for more details as this project is currently under development.",
+    image: "/favicon/coming-soon.png", // Place a 'coming soon' image in public/favicon/coming-soon.png
+    tags: ["Coming Soon"],
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+  {
     title: "FeedLoop",
     description:
       "Shaped an intuitive user experience by developing a lightweight, framework-agnostic feedback widget that can be integrated into any website via a single-line script tag.",
