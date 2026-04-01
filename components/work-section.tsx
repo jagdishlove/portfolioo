@@ -9,7 +9,7 @@ const projects = [
     title: "Real-Time Infrastructure Monitor",
     description:
       "A comprehensive platform for monitoring infrastructure in real time. Stay tuned for more details as this project is currently under development.",
-    image: "/favicon/coming-soon.png", // Place a 'coming soon' image in public/favicon/coming-soon.png
+    image: "coming-soon.png", // Place a 'coming soon' image in public/favicon/coming-soon.png
     tags: ["Coming Soon"],
     liveUrl: "#",
     githubUrl: "#",
