@@ -6,11 +6,13 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "Real-Time Infrastructure Monitor",
+    title: "Fluide",
     description:
-      "A comprehensive platform for monitoring infrastructure in real time. Stay tuned for more details as this project is currently under development.",
-    image: "coming-soon.png", // Place a 'coming soon' image in public/favicon/coming-soon.png
-    tags: ["Coming Soon"],
+      "Fluide is an AI-powered web application that lets you create a complete learning book by simply providing a topic. It automatically generates the subject, chapters, and content for the book, enriched with examples, explanations, and interactive quizzes. Fluide helps you learn efficiently by offering personalized, structured material and the ability to generate practice questions and quizzes for each chapter.",
+    image: "/fluide.png", // Use a coming soon or relevant image
+    tags: ["AI", "Next.js", "TypeScript", "Education", "Quiz", "Coming Soon"],
+    liveUrl: "#",
+    githubUrl: "#",
   },
   {
     title: "FeedLoop",
@@ -120,64 +122,73 @@ export function WorkSection() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={project.title}
-              className={`group relative bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 ${
-                isVisible ? "animate-fade-up" : "opacity-0"
-              }`}
-              style={{ animationDelay: `${index * 0.15}s` }}
-            >
-              {project.image && (
-                <div className="relative h-64 overflow-hidden bg-secondary">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-br from-card via-transparent to-transparent" />
-                </div>
-              )}
+          {projects.map((project, index) => {
+            const isComingSoon =
+              project.tags && project.tags.includes("Coming Soon");
+            return (
+              <div
+                key={project.title}
+                className={`group relative bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 ${
+                  isVisible ? "animate-fade-up" : "opacity-0"
+                }`}
+                style={{ animationDelay: `${index * 0.15}s` }}
+              >
+                {project.image && (
+                  <div className="relative h-64 overflow-hidden bg-secondary">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-br from-card via-transparent to-transparent" />
+                    {isComingSoon && (
+                      <span className="absolute top-4 left-4 bg-yellow-400 text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg z-20">
+                        Coming Soon
+                      </span>
+                    )}
+                  </div>
+                )}
 
-              <div className="p-8">
-                <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {project.description}
-                </p>
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    {project.description}
+                  </p>
 
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map((tag: string) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 text-xs font-medium bg-secondary text-muted-foreground rounded-full"
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.map((tag: string) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1 text-xs font-medium bg-secondary text-muted-foreground rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <a
+                      href={project.liveUrl}
+                      className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:opacity-80 transition-opacity"
                     >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <a
-                    href={project.liveUrl}
-                    className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:opacity-80 transition-opacity"
-                  >
-                    <ExternalLink size={16} />
-                    Live Demo
-                  </a>
-                  <a
-                    href={project.githubUrl}
-                    className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    <Github size={16} />
-                    Source Code
-                  </a>
+                      <ExternalLink size={16} />
+                      Live Demo
+                    </a>
+                    <a
+                      href={project.githubUrl}
+                      className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      <Github size={16} />
+                      Source Code
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div
