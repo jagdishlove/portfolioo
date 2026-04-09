@@ -24,7 +24,7 @@ export function ScrollToTopButton() {
       variant="secondary"
       size="lg"
       className={cn(
-        "fixed bottom-8 right-8 z-50 shadow-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all",
+        "fixed bottom-20 right-8 z-50 shadow-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all",
         visible ? "opacity-100" : "opacity-0 pointer-events-none",
       )}
       aria-label="Scroll to top"

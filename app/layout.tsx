@@ -7,6 +7,7 @@ import {
   ScrollProgressBar,
 } from "@/components/ui/scroll-to-top";
 import "./globals.css";
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -54,6 +55,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}
       >
+        <my-widget project-id="10"></my-widget>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -62,6 +64,11 @@ export default function RootLayout({
         >
           <ScrollProgressBar />
           {children}
+
+          <Script
+            src="http://thoughtsyde.vercel.app//widget.umd.js"
+            strategy="afterInteractive"
+          />
           <ScrollToTopButton />
         </ThemeProvider>
         <Analytics />
