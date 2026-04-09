@@ -19,7 +19,7 @@ const projects = [
     description:
       "Shaped an intuitive user experience by developing a lightweight, framework-agnostic feedback widget that can be integrated into any website via a single-line script tag.",
     image: "thoughtstyle.png",
-    tags: ["React", "Node.js", "MongoDB"],
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL"],
     liveUrl: "https://thoughtsyde-qxn4.vercel.app/",
     githubUrl: "https://github.com/jagdishlove/covid19-tracker",
   },
@@ -130,9 +130,10 @@ export function WorkSection() {
                 key={project.title}
                 className={`group relative bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/10 ${
                   isVisible ? "animate-fade-up" : "opacity-0"
-                }`}
+                } flex flex-col h-full`}
                 style={{ animationDelay: `${index * 0.15}s` }}
               >
+                {/* Card Head: Image */}
                 {project.image && (
                   <div className="relative h-64 overflow-hidden bg-secondary">
                     <Image
@@ -150,7 +151,8 @@ export function WorkSection() {
                   </div>
                 )}
 
-                <div className="p-8">
+                {/* Card Body: Title, Description, Tags */}
+                <div className="flex flex-col flex-1 p-8">
                   <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
@@ -169,7 +171,11 @@ export function WorkSection() {
                     ))}
                   </div>
 
-                  <div className="flex items-center gap-4">
+                  {/* Spacer to push footer down if content is short */}
+                  <div className="flex-1" />
+
+                  {/* Card Footer: Links */}
+                  <div className="flex items-center gap-4 mt-2">
                     <a
                       href={project.liveUrl}
                       className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:opacity-80 transition-opacity"
