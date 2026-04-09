@@ -66,7 +66,7 @@ export default function RootLayout({
           {children}
 
           <Script
-            src="http://thoughtsyde.vercel.app//widget.umd.js"
+            src="https://thoughtsyde.vercel.app//widget.umd.js"
             strategy="afterInteractive"
           />
           <ScrollToTopButton />
