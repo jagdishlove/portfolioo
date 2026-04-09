@@ -55,7 +55,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased`}
       >
-        <my-widget project-id="10"></my-widget>
+        <my-widget project-id="a0a09f26-3620-4a12-81ce-aa6f2d6c8c47"></my-widget>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
