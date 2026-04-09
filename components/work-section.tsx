@@ -11,8 +11,8 @@ const projects = [
       "Fluide is an AI-powered web application that lets you create a complete learning book by simply providing a topic. It automatically generates the subject, chapters, and content for the book, enriched with examples, explanations, and interactive quizzes. Fluide helps you learn efficiently by offering personalized, structured material and the ability to generate practice questions and quizzes for each chapter.",
     image: "/fluide.png", // Use a coming soon or relevant image
     tags: ["AI", "Next.js", "TypeScript", "Education", "Quiz", "Coming Soon"],
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: null,
+    githubUrl: null,
   },
   {
     title: "FeedLoop",
@@ -47,8 +47,8 @@ const projects = [
       "A responsive portfolio website showcasing projects and skills with a modern design.",
     image: "https://picsum.photos/id/24/600/400",
     tags: ["React", "TypeScript", "Tailwind CSS"],
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: null,
+    githubUrl: null,
   },
   {
     title: "GPT3 Animation Website",
@@ -175,22 +175,24 @@ export function WorkSection() {
                   <div className="flex-1" />
 
                   {/* Card Footer: Links */}
-                  <div className="flex items-center gap-4 mt-2">
-                    <a
-                      href={project.liveUrl}
-                      className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:opacity-80 transition-opacity"
-                    >
-                      <ExternalLink size={16} />
-                      Live Demo
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      <Github size={16} />
-                      Source Code
-                    </a>
-                  </div>
+                  {project.liveUrl && (
+                    <div className="flex items-center gap-4 mt-2">
+                      <a
+                        href={project.liveUrl}
+                        className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:opacity-80 transition-opacity"
+                      >
+                        <ExternalLink size={16} />
+                        Live Demo
+                      </a>
+                      <a
+                        href={project.githubUrl}
+                        className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                      >
+                        <Github size={16} />
+                        Source Code
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             );
