@@ -15,6 +15,23 @@ const projects = [
     githubUrl: null,
   },
   {
+    title: "Batman Arkham shop E-commerce",
+    description:
+      "A stunning e-commerce website for the Batman: Arkham series, featuring a sleek design and user-friendly interface.",
+    image: "batman.png",
+    tags: [
+      "React",
+      "nodejs",
+      "expressjs",
+      "TypeScript",
+      "zustand",
+      "Tailwind CSS",
+      "MongoDB",
+    ],
+    liveUrl: "https://batman-arkham-shop-client.vercel.app/",
+    githubUrl: "https://github.com/jagdishlove/Batman_Arkham_shop",
+  },
+  {
     title: "FeedLoop",
     description:
       "Shaped an intuitive user experience by developing a lightweight, framework-agnostic feedback widget that can be integrated into any website via a single-line script tag.",
@@ -59,22 +76,15 @@ const projects = [
     liveUrl: "https://gpt3-jm.vercel.app/",
     githubUrl: "https://github.com/jagdishlove/gpt3-jm",
   },
+
   {
-    title: "Batman Arkham shop E-commerce",
+    title: "Apple Reminder",
     description:
-      "A stunning e-commerce website for the Batman: Arkham series, featuring a sleek design and user-friendly interface.",
-    image: "batman.png",
-    tags: [
-      "React",
-      "nodejs",
-      "expressjs",
-      "TypeScript",
-      "zustand",
-      "Tailwind CSS",
-      "MongoDB",
-    ],
-    liveUrl: "https://batman-arkham-shop-client.vercel.app/",
-    githubUrl: "https://github.com/jagdishlove/Batman_Arkham_shop",
+      "A React Native mobile app inspired by Apple Reminders, also available on the web. Easily manage your tasks and reminders with a clean, intuitive interface.",
+    image: "appleReminder.png", // Add image path here later
+    tags: ["react native", "expo", "javascript", "postgres", "Neon"],
+    liveUrl: "https://apple-reminder.vercel.app/",
+    githubUrl: "https://github.com/jagdishlove/apple_reminder",
   },
 ];
 
