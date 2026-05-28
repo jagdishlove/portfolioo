@@ -1,6 +1,32 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react";
+import { Code2, Layers3, Library, Package } from "lucide-react";
+import { FaAws } from "react-icons/fa";
+import type { IconType } from "react-icons";
+import {
+  SiCypress,
+  SiDocker,
+  SiFigma,
+  SiGit,
+  SiGraphql,
+  SiJavascript,
+  SiJest,
+  SiMongodb,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostgresql,
+  SiPython,
+  SiReact,
+  SiSass,
+  SiStorybook,
+  SiTailwindcss,
+  SiTypescript,
+  SiVercel,
+  SiVuedotjs,
+  SiWebpack,
+} from "react-icons/si";
+import { TbApi } from "react-icons/tb";
 
 const skillCategories = [
   {
@@ -30,44 +56,93 @@ const skillCategories = [
       { name: "AWS / Vercel", level: 80 },
     ],
   },
-]
+];
 
-const technologies = [
-  "JavaScript", "TypeScript", "React", "Next.js", "Vue.js", "Node.js",
-  "Python", "PostgreSQL", "MongoDB", "GraphQL", "REST APIs", "Git",
-  "Docker", "AWS", "Vercel", "Figma", "TailwindCSS", "Sass",
-  "Jest", "Cypress", "Storybook", "Webpack"
-]
+const technologyGroups = [
+  {
+    title: "Programming",
+    icon: Code2,
+    items: ["JavaScript", "TypeScript", "Python"],
+  },
+  {
+    title: "Frameworks",
+    icon: Layers3,
+    items: ["React", "Next.js", "Vue.js", "Node.js"],
+  },
+  {
+    title: "Libraries",
+    icon: Library,
+    items: ["Tailwind CSS", "GraphQL", "REST APIs", "Sass", "Jest", "Cypress"],
+  },
+  {
+    title: "Packages & Tools",
+    icon: Package,
+    items: [
+      "PostgreSQL",
+      "MongoDB",
+      "Git",
+      "Docker",
+      "AWS",
+      "Vercel",
+      "Figma",
+      "Storybook",
+      "Webpack",
+    ],
+  },
+];
+
+const technologyIconMap: Record<string, IconType> = {
+  JavaScript: SiJavascript,
+  TypeScript: SiTypescript,
+  Python: SiPython,
+  React: SiReact,
+  "Next.js": SiNextdotjs,
+  "Vue.js": SiVuedotjs,
+  "Node.js": SiNodedotjs,
+  "Tailwind CSS": SiTailwindcss,
+  GraphQL: SiGraphql,
+  "REST APIs": TbApi,
+  Sass: SiSass,
+  Jest: SiJest,
+  Cypress: SiCypress,
+  PostgreSQL: SiPostgresql,
+  MongoDB: SiMongodb,
+  Git: SiGit,
+  Docker: SiDocker,
+  AWS: FaAws,
+  Vercel: SiVercel,
+  Figma: SiFigma,
+  Storybook: SiStorybook,
+  Webpack: SiWebpack,
+};
 
 export function SkillsSection() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
-    )
+      { threshold: 0.2 },
+    );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+      observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section
-      id="skills"
-      ref={sectionRef}
-      className="relative py-32"
-    >
+    <section id="skills" ref={sectionRef} className="relative py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className={`text-center max-w-3xl mx-auto mb-16 ${isVisible ? "animate-fade-up" : "opacity-0"}`}>
+        <div
+          className={`text-center max-w-3xl mx-auto mb-16 ${isVisible ? "animate-fade-up" : "opacity-0"}`}
+        >
           <p className="text-primary font-medium tracking-wide uppercase text-sm mb-4">
             Skills & Expertise
           </p>
@@ -75,8 +150,8 @@ export function SkillsSection() {
             Technologies I work with
           </h2>
           <p className="text-lg text-muted-foreground">
-            I've worked with a variety of technologies in the web development world.
-            Here's a quick overview of my main technical skill set.
+            I've worked with a variety of technologies in the web development
+            world. Here's a quick overview of my main technical skill set.
           </p>
         </div>
 
@@ -89,17 +164,23 @@ export function SkillsSection() {
               }`}
               style={{ animationDelay: `${categoryIndex * 0.15}s` }}
             >
-              <h3 className="text-xl font-bold text-foreground mb-6">{category.title}</h3>
+              <h3 className="text-xl font-bold text-foreground mb-6">
+                {category.title}
+              </h3>
               <div className="space-y-6">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skill.name}>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium text-foreground">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                      <span className="text-sm font-medium text-foreground">
+                        {skill.name}
+                      </span>
+                      <span className="text-sm text-muted-foreground">
+                        {skill.level}%
+                      </span>
                     </div>
                     <div className="h-2 bg-secondary rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-primary to-primary/60 rounded-full transition-all duration-1000 ease-out"
+                        className="h-full bg-linear-to-r from-primary to-primary/60 rounded-full transition-all duration-1000 ease-out"
                         style={{
                           width: isVisible ? `${skill.level}%` : "0%",
                           transitionDelay: `${(categoryIndex * 4 + skillIndex) * 0.1}s`,
@@ -113,24 +194,55 @@ export function SkillsSection() {
           ))}
         </div>
 
-        {/* Technology Tags */}
-        <div className={`${isVisible ? "animate-fade-up delay-500" : "opacity-0"}`}>
+        {/* Technology Groups */}
+        <div
+          className={`${isVisible ? "animate-fade-up delay-500" : "opacity-0"}`}
+        >
           <h3 className="text-center text-lg font-semibold text-foreground mb-8">
             Full Technology Stack
           </h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {technologies.map((tech, index) => (
-              <span
-                key={tech}
-                className="px-4 py-2 text-sm font-medium bg-secondary text-foreground rounded-full hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default hover:scale-105"
-                style={{ animationDelay: `${index * 0.05}s` }}
-              >
-                {tech}
-              </span>
-            ))}
+          <div className="grid sm:grid-cols-2 gap-6">
+            {technologyGroups.map((group, index) => {
+              const Icon = group.icon;
+
+              return (
+                <div
+                  key={group.title}
+                  className="rounded-2xl border border-border bg-card p-6 hover:border-primary/50 transition-all duration-300"
+                  style={{ animationDelay: `${index * 0.08}s` }}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="h-9 w-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                      <Icon size={18} />
+                    </div>
+                    <h4 className="text-base font-semibold text-foreground">
+                      {group.title}
+                    </h4>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {group.items.map((item) =>
+                      (() => {
+                        const TechIcon = technologyIconMap[item];
+
+                        return (
+                          <span
+                            key={`${group.title}-${item}`}
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-secondary text-foreground rounded-full"
+                          >
+                            {TechIcon && <TechIcon className="text-[13px]" />}
+                            {item}
+                          </span>
+                        );
+                      })(),
+                    )}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

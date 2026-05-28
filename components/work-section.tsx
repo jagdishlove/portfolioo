@@ -2,7 +2,64 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { ExternalLink, Github } from "lucide-react";
+import {
+  BadgeCheck,
+  BookOpen,
+  Brain,
+  ExternalLink,
+  Github,
+  GraduationCap,
+  Lightbulb,
+} from "lucide-react";
+import type { IconType } from "react-icons";
+import {
+  SiExpo,
+  SiExpress,
+  SiFirebase,
+  SiFramer,
+  SiJavascript,
+  SiMongodb,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiOpenai,
+  SiPostgresql,
+  SiReact,
+  SiSupabase,
+  SiTailwindcss,
+  SiTypescript,
+  SiVuedotjs,
+} from "react-icons/si";
+
+const normalizeTag = (tag: string) =>
+  tag.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+const tagIconMap: Record<string, IconType> = {
+  nextjs: SiNextdotjs,
+  react: SiReact,
+  reactnative: SiReact,
+  vuejs: SiVuedotjs,
+  nodejs: SiNodedotjs,
+  expressjs: SiExpress,
+  typescript: SiTypescript,
+  javascript: SiJavascript,
+  tailwindcss: SiTailwindcss,
+  mongodb: SiMongodb,
+  postgresql: SiPostgresql,
+  postgres: SiPostgresql,
+  neon: BadgeCheck,
+  firebase: SiFirebase,
+  supabase: SiSupabase,
+  zustand: BadgeCheck,
+  openai: SiOpenai,
+  framermotion: SiFramer,
+  expo: SiExpo,
+  ai: Brain,
+  education: GraduationCap,
+  quiz: BookOpen,
+  comingsoon: Lightbulb,
+};
+
+const getTagIcon = (tag: string) => tagIconMap[normalizeTag(tag)] || BadgeCheck;
 
 const projects = [
   {
@@ -10,9 +67,18 @@ const projects = [
     description:
       "Fluide is an AI-powered web application that lets you create a complete learning book by simply providing a topic. It automatically generates the subject, chapters, and content for the book, enriched with examples, explanations, and interactive quizzes. Fluide helps you learn efficiently by offering personalized, structured material and the ability to generate practice questions and quizzes for each chapter.",
     image: "/fluide.png", // Use a coming soon or relevant image
-    tags: ["AI", "Next.js", "TypeScript", "Education", "Quiz", "Coming Soon"],
-    liveUrl: null,
-    githubUrl: null,
+    tags: ["AI", "Next.js", "TypeScript", "Education", "Quiz", "LLM"],
+    liveUrl: "https://fluide-mtkz.vercel.app/",
+    githubUrl: "https://github.com/jagdishlove/fluide/tree/main",
+  },
+  {
+    title: "Apple Reminder",
+    description:
+      "Built while learning React Native, this project recreates the Apple Reminders experience as a mobile-first app and is deployed on the web to showcase the same task-management flow.",
+    image: "appleReminder.png", // Add image path here later
+    tags: ["react native", "expo", "javascript", "postgres", "Neon"],
+    liveUrl: "https://apple-reminder.vercel.app/",
+    githubUrl: "https://github.com/jagdishlove/apple_reminder",
   },
   {
     title: "Batman Arkham shop E-commerce",
@@ -75,16 +141,6 @@ const projects = [
     tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "OpenAI"],
     liveUrl: "https://gpt3-jm.vercel.app/",
     githubUrl: "https://github.com/jagdishlove/gpt3-jm",
-  },
-
-  {
-    title: "Apple Reminder",
-    description:
-      "A React Native mobile app inspired by Apple Reminders, also available on the web. Easily manage your tasks and reminders with a clean, intuitive interface.",
-    image: "appleReminder.png", // Add image path here later
-    tags: ["react native", "expo", "javascript", "postgres", "Neon"],
-    liveUrl: "https://apple-reminder.vercel.app/",
-    githubUrl: "https://github.com/jagdishlove/apple_reminder",
   },
 ];
 
@@ -171,14 +227,21 @@ export function WorkSection() {
                   </p>
 
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag: string) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 text-xs font-medium bg-secondary text-muted-foreground rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                    {project.tags.map((tag: string) =>
+                      (() => {
+                        const TagIcon = getTagIcon(tag);
+
+                        return (
+                          <span
+                            key={tag}
+                            className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium bg-secondary text-muted-foreground rounded-full"
+                          >
+                            <TagIcon className="text-[12px]" />
+                            {tag}
+                          </span>
+                        );
+                      })(),
+                    )}
                   </div>
 
                   {/* Spacer to push footer down if content is short */}
