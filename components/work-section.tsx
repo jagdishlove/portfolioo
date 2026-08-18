@@ -68,7 +68,7 @@ const projects = [
       "Fluide is an AI-powered web application that lets you create a complete learning book by simply providing a topic. It automatically generates the subject, chapters, and content for the book, enriched with examples, explanations, and interactive quizzes. Fluide helps you learn efficiently by offering personalized, structured material and the ability to generate practice questions and quizzes for each chapter.",
     image: "/fluide.png", // Use a coming soon or relevant image
     tags: ["AI", "Next.js", "TypeScript", "Education", "Quiz", "LLM"],
-    liveUrl: "https://fluide-mtkz.vercel.app/",
+    liveUrl: "https://f1uide.me/",
     githubUrl: "https://github.com/jagdishlove/fluide/tree/main",
   },
   {
