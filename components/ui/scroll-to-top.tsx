@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -45,25 +45,40 @@ export function ScrollToTopButton() {
 }
 
 export function ScrollProgressBar() {
-  const [scroll, setScroll] = useState(0);
+  const barRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
+    let frame = 0;
+
+    const update = () => {
+      frame = 0;
+      const el = barRef.current;
+      if (!el) return;
       const scrolled = window.scrollY;
       const height = document.documentElement.scrollHeight - window.innerHeight;
-      setScroll(height > 0 ? (scrolled / height) * 100 : 0);
+      const pct = height > 0 ? (scrolled / height) * 100 : 0;
+      el.style.width = `${pct}%`;
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    const handleScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll, { passive: true });
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
-  // Stick to top, always in front of navbar, with smooth glide
+  // Stick to top, always in front of navbar. Width is updated per animation
+  // frame via ref so it glides smoothly with no React re-render per scroll.
   return (
     <div className="fixed top-0 left-0 w-full z-[999] h-1 pointer-events-none">
-      <div
-        className="h-full bg-primary transition-all duration-300 ease-out"
-        style={{ width: `${scroll}%` }}
-      />
+      <div ref={barRef} className="h-full bg-primary will-change-width" />
     </div>
   );
 }
