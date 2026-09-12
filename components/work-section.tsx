@@ -20,7 +20,6 @@ import {
   SiMongodb,
   SiNextdotjs,
   SiNodedotjs,
-  SiOpenai,
   SiPostgresql,
   SiReact,
   SiSupabase,
