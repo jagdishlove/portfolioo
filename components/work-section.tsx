@@ -11,7 +11,6 @@ import {
   GraduationCap,
   Lightbulb,
 } from "lucide-react";
-import type { IconType } from "react-icons";
 import {
   SiExpo,
   SiExpress,
@@ -29,6 +28,7 @@ import {
   SiTypescript,
   SiVuedotjs,
 } from "react-icons/si";
+import type { IconType } from "react-icons";
 
 const normalizeTag = (tag: string) =>
   tag.toLowerCase().replace(/[^a-z0-9]/g, "");
