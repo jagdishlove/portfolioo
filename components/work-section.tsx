@@ -128,7 +128,7 @@ const projects = [
     title: "Portfolio Website",
     description:
       "A responsive portfolio website showcasing projects and skills with a modern design.",
-    image: "https://picsum.photos/id/24/600/400",
+    image: "portfolio_project.png",
     tags: ["React", "TypeScript", "Tailwind CSS"],
     liveUrl: null,
     githubUrl: null,
